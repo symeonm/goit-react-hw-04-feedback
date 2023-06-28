@@ -1,14 +1,15 @@
-export default function ButtonFeedback({options, onLeaveFeedback}) {
+export default function ButtonFeedback({options}) {
  
     return (
       <div>
-        {options.map(value => {
+        {options.map(({value, func}) => {
           return (
+            // console.log(value, func)
             <button
             key={value}
               type="button"
               style={{ height: '20px', width: '60px', marginRight: '10px' }}
-              onClick={() => onLeaveFeedback(value)}
+              onClick={() => func()}
             >
               {value}
             </button>
